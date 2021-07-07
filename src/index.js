@@ -44,7 +44,7 @@ loader.pitch = function (request) {
         SharedWorker = require(${remainingRequest}),
         inst;
     module.exports = function f() {
-      var worker = new SharedWorker()
+      var worker = new SharedWorker();
       if (this instanceof f) return wrap(worker.port);
       return inst || (inst = wrap(worker.port));
     };
