@@ -26,7 +26,11 @@ export default function loader () { }
 
 loader.pitch = function (request) {
   const options = loaderUtils.getOptions(this) || {};
-  const workerLoaderOptions = {};
+  const workerLoaderOptions = {
+    options: {
+      worker: 'SharedWorker'
+    }
+  };
   for (let i in options) {
     if (comlinkLoaderSpecificOptions.indexOf(i) === -1) {
       workerLoaderOptions[i] = options[i];
@@ -42,7 +46,8 @@ loader.pitch = function (request) {
         SharedWorker = require(${remainingRequest}),
         inst;
     module.exports = function f() {
-      if (this instanceof f) return wrap(SharedWorker());
+      var worker = SharedWorker()
+      if (this instanceof f) return wrap();
       return inst || (inst = wrap(SharedWorker()));
     };
   `.replace(/\n\s*/g, '');
