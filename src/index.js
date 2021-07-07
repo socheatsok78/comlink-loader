@@ -27,9 +27,7 @@ export default function loader () { }
 loader.pitch = function (request) {
   const options = loaderUtils.getOptions(this) || {};
   const workerLoaderOptions = {
-    options: {
-      worker: 'SharedWorker'
-    }
+    worker: 'SharedWorker'
   };
   for (let i in options) {
     if (comlinkLoaderSpecificOptions.indexOf(i) === -1) {
