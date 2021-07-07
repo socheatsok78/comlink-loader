@@ -1,9 +1,9 @@
 {
-  "name": "comlink-loader",
+  "name": "@socheatsok78/sharedworker-loader",
   "version": "2.0.0",
-  "description": "Webpack loader: offload modules to Worker threads seamlessly using Comlink",
+  "description": "Webpack loader: offload modules to SharedWorker threads seamlessly using Comlink",
   "main": "dist/comlink-loader.js",
-  "repository": "GoogleChromeLabs/comlink-loader",
+  "repository": "socheatsok78/comlink-loader",
   "scripts": {
     "build": "microbundle --inline none --format cjs --no-compress src/*.js",
     "prepublishOnly": "npm run build",
@@ -35,6 +35,10 @@
   ],
   "author": "The Chromium Authors",
   "contributors": [
+    {
+      "name": "Socheat Sok",
+      "email": "socheatsok78@gmail.com"
+    },
     {
       "name": "Jason Miller",
       "email": "developit@google.com"
