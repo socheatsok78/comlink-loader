@@ -17,7 +17,7 @@
 export default function rpcWorkerLoader (content) {
   return `import { expose } from 'comlink';
   ${content};
-  onconnect = function (event) {
+  self.onconnect = function (event) {
     const port = event.ports[0];
     expose(
       Object.keys(__webpack_exports__).reduce(function(r,k){
