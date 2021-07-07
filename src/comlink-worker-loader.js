@@ -24,8 +24,7 @@ export default function rpcWorkerLoader (content) {
         if (k=='__esModule') return r;
         r[k] = __webpack_exports__[k];
         return r
-      }, port)
-  };
-
-  )`;
+      }, {})
+    , port);
+  };`;
 }
