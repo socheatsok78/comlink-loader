@@ -44,8 +44,9 @@ loader.pitch = function (request) {
         SharedWorker = require(${remainingRequest}),
         inst;
     module.exports = function f() {
-      if (this instanceof f) return wrap(SharedWorker());
-      return inst || (inst = wrap(SharedWorker()));
+      var worker = new SharedWorker()
+      if (this instanceof f) return wrap(worker.port);
+      return inst || (inst = wrap(worker.port));
     };
   `.replace(/\n\s*/g, '');
 };
