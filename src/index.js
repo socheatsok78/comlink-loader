@@ -41,10 +41,10 @@ loader.pitch = function (request) {
 
   return `
     var wrap = require('comlink').wrap,
-        SharedWorker = require(${remainingRequest}),
+        mod = require(${remainingRequest}),
         inst;
     module.exports = function f() {
-      var worker = SharedWorker();
+      var worker = mod.default();
       if (this instanceof f) return wrap(worker.port);
       return inst || (inst = wrap(worker.port));
     };
