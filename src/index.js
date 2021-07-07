@@ -46,8 +46,7 @@ loader.pitch = function (request) {
         SharedWorker = require(${remainingRequest}),
         inst;
     module.exports = function f() {
-      var worker = SharedWorker()
-      if (this instanceof f) return wrap();
+      if (this instanceof f) return wrap(SharedWorker());
       return inst || (inst = wrap(SharedWorker()));
     };
   `.replace(/\n\s*/g, '');
