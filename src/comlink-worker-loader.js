@@ -17,11 +17,15 @@
 export default function rpcWorkerLoader (content) {
   return `import { expose } from 'comlink';
   ${content};
-  expose(
-    Object.keys(__webpack_exports__).reduce(function(r,k){
-      if (k=='__esModule') return r;
-      r[k] = __webpack_exports__[k];
-      return r
-    },{})
+  onconnect = function (event) {
+    const port = event.ports[0];
+    expose(
+      Object.keys(__webpack_exports__).reduce(function(r,k){
+        if (k=='__esModule') return r;
+        r[k] = __webpack_exports__[k];
+        return r
+      }, port)
+  };
+
   )`;
 }
