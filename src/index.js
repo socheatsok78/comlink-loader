@@ -45,7 +45,6 @@ loader.pitch = function (request) {
         inst;
     module.exports = function f() {
       var worker = mod.default();
-      console.log('worker', worker);
       if (this instanceof f) return wrap(worker.port);
       return inst || (inst = wrap(worker.port));
     };
