@@ -2,12 +2,12 @@
   <img src="https://i.imgur.com/cLb2dLG.jpg" width="600" alt="comlink-loader">
 </p>
 <h1 align="center">🛰 @socheatsok78/sharedworker-loader 📡</h1>
-<p align="center">Offload modules to Worker threads seamlessly using <a href="https://github.com/GoogleChromeLabs/comlink">Comlink</a>.</p>
+<p align="center">Offload modules to Shared Worker threads seamlessly using <a href="https://github.com/GoogleChromeLabs/comlink">Comlink</a>.</p>
 
 
 ### Features
 
-- Offload almost any module into a SharedWorker with little or no usage change
+- Offload almost any module into a Shared Worker with little or no usage change
 - Supports arbitrary classes, objects & functions (`await new Foo()`)
 - Works beautifully with async/await
 - Built-in code-splitting: workers are lazy-loaded
@@ -26,13 +26,13 @@ The goal of `sharedworker-loader` is to make the fact that a module is running i
 
 ### Factory Mode (default)
 
-In the example below, there are two changes we must make in order to import `MyClass` within a Worker via `comlink-loader`.
+In the example below, there are two changes we must make in order to import `MyClass` within a Worker via `@socheatsok78/sharedworker-loader`.
 
 1. instantiation and method calls must be prefixed with `await`, since everything is inherently asynchronous.
-2. the value we import from `comlink-loader!./my-class` is now a function that returns our module exports.
+2. the value we import from `@socheatsok78/sharedworker-loader!./my-class` is now a function that returns our module exports.
     > Calling this function creates a new instance of the Worker.
 
-**my-class.js**: _(gets moved into a worker)_
+**my-class.js**: _(gets moved into a shared worker)_
 
 ```js
 // Dependencies get bundled into the worker:
@@ -102,7 +102,7 @@ module.exports = {
 }
 ```
 
-Now, let's write a simple module that we're going to load in a Worker:
+Now, let's write a simple module that we're going to load in a Shared Worker:
 
 **greetings.worker.ts**:
 
