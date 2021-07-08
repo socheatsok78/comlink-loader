@@ -1,6 +1,6 @@
 {
   "name": "@socheatsok78/sharedworker-loader",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Webpack loader: offload modules to SharedWorker threads seamlessly using Comlink",
   "main": "dist/comlink-loader.js",
   "repository": "socheatsok78/comlink-loader",
