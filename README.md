@@ -3,6 +3,10 @@
 </p>
 <h1 align="center">🛰 @socheatsok78/sharedworker-loader 📡</h1>
 <p align="center">Offload modules to Shared Worker threads seamlessly using <a href="https://github.com/GoogleChromeLabs/comlink">Comlink</a>.</p>
+<p align="center">
+  <img src="https://img.shields.io/npm/dw/@socheatsok78/sharedworker-loader" alt="@socheatsok78/sharedworker-loader">
+  <img src="https://img.shields.io/github/license/socheatsok78/comlink-loader" alt="@socheatsok78/comlink-loader">
+</p>
 
 
 ### Features
